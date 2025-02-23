@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Language Club Membership Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .form-group .info-box {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #eaf5f7;
+        }
+        .form-group .info-box.hidden {
+            display: none;
+        }
+        .form-group input[type="file"] {
+            padding: 0;
+        }
+        .form-group .agreement {
+            font-size: 0.9em;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        .form-group .agreement label {
+            display: block;
+            margin: 5px 0;
+        }
+        .form-group .agreement input[type="text"] {
+            width: 50%;
+            display: inline;
+            margin-right: 10px;
+        }
+        .form-group .agreement p {
+            margin: 0;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function showTooltip(id, text) {
+            document.getElementById(id).innerHTML = text;
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function hideTooltip(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        window.onload = function() {
+            const formGroups = document.querySelectorAll('.form-group input, .form-group textarea');
+            formGroups.forEach(group => {
+                group.addEventListener('focus', function() {
+                    showTooltip(this.id + '-tooltip', this.getAttribute('data-tip'));
+                });
+                group.addEventListener('blur', function() {
+                    hideTooltip(this.id + '-tooltip');
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2><img src=https://i.ibb.co/R4BCPZ0B/20250130-143124.png width=50% border=2px></h2>
+        <form action="https://formspree.io/f/myzgapre" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required data-tip="Enter your name here">
+                <div id="name-tooltip" class="info-box hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="class-div">Class & School/College:</label>
+                <input type="text" id="class-div" name="class-div" required data-tip="Enter your class and division here">
+                <div id="class-div-tooltip" class="info-box hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required data-tip="Enter your current address here">
+                <div id="address-tooltip" class="info-box hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telephone No.:</label>
+                <input type="text" id="phone" name="phone" required data-tip="Enter your phone number(s) here, separate multiple numbers with commas">
+                <div id="phone-tooltip" class="info-box hidden"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Blood Group:</label>
+                <input type="email" id="email" name="email" required data-tip="Enter your email address here">
+                <div id="email-tooltip" class="info-box hidden"></div>
+            </div>
+            <div class="form-group agreement">
+                <p>I <input type="text" id="declaration-name" name="declaration-name" required placeholder="Your Name" data-tip="Enter your name here"> hereby declare that I will abide by the rules of Socialist Students' Front</p>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="copyright">
+            © 2024 CHITRON BHATTACHARJEE. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
