@@ -1,156 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socialist Students' Front Primary Membership Application</title>
+    <title>সমাজতান্ত্রিক ছাত্র ফ্রন্ট | প্রাথমিক সদস্য পদের জন্য আবেদন</title>
     <style>
+        @font-face {
+            font-family: 'Bornopata';
+            src: url('https://raw.githubusercontent.com/AdiBhaiAlpha/ssfmym/main/bornopata.ttf') format('truetype');
+        }
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Bornopata', sans-serif;
             background-color: #f4f4f4;
-        }
-        .form-container {
-            max-width: 700px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-        .form-container h2 {
+            margin: 0;
+            padding: 0;
             text-align: center;
+        }
+        .header {
+            font-size: calc(16px + 0.5vw);
+            font-weight: bold;
+            color: #d10000;
+            margin: 10px 0;
+            white-space: nowrap;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #d10000;
+        }
+        .quote-box {
+            background: #ffebeb;
+            border-left: 5px solid #d10000;
+            padding: 10px;
+            margin: 10px 0;
+            font-style: italic;
+            position: relative;
+        }
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 5px;
         }
         .form-group {
             margin-bottom: 15px;
             position: relative;
         }
-        .form-group label {
+        label {
             display: block;
-            margin-bottom: 5px;
+            font-weight: bold;
         }
-        .form-group input,
-        .form-group textarea {
+        input {
             width: 100%;
             padding: 8px;
-            box-sizing: border-box;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .form-group textarea {
-            height: 100px;
-        }
-        .form-group button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-group button:hover {
-            background-color: #45a049;
-        }
-        .form-group .info-box {
-            border: 1px dashed #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #eaf5f7;
-        }
-        .form-group .info-box.hidden {
+        .help-box {
             display: none;
-        }
-        .form-group input[type="file"] {
-            padding: 0;
-        }
-        .form-group .agreement {
-            font-size: 0.9em;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-        .form-group .agreement label {
-            display: block;
-            margin: 5px 0;
-        }
-        .form-group .agreement input[type="text"] {
-            width: 50%;
-            display: inline;
-            margin-right: 10px;
-        }
-        .form-group .agreement p {
-            margin: 0;
-        }
-        .copyright {
-            text-align: center;
-            font-size: 0.8em;
-            margin-top: 20px;
+            font-size: 12px;
             color: #555;
+            background: #f9f9f9;
+            padding: 5px;
+            border-left: 3px solid #d10000;
+            margin-top: 5px;
+        }
+        input:focus + .help-box {
+            display: block;
+        }
+        button {
+            background: #d10000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #a00000;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: gray;
+        }
+        .declaration-box {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #d10000;
+            margin-top: 20px;
+            font-size: 14px;
         }
     </style>
-    <script>
-        function showTooltip(id, text) {
-            document.getElementById(id).innerHTML = text;
-            document.getElementById(id).classList.remove('hidden');
-        }
-
-        function hideTooltip(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-
-        window.onload = function() {
-            const formGroups = document.querySelectorAll('.form-group input, .form-group textarea');
-            formGroups.forEach(group => {
-                group.addEventListener('focus', function() {
-                    showTooltip(this.id + '-tooltip', this.getAttribute('data-tip'));
-                });
-                group.addEventListener('blur', function() {
-                    hideTooltip(this.id + '-tooltip');
-                });
-            });
-        }
-    </script>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2><img src=https://i.ibb.co/R4BCPZ0B/20250130-143124.png width=50% border=2px></h2>
-        <form action="https://formspree.io/f/myzgapre" method="post">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required data-tip="Enter your name here">
-                <div id="name-tooltip" class="info-box hidden"></div>
-            </div>
-            <div class="form-group">
-                <label for="class-div">Class & School/College:</label>
-                <input type="text" id="class-div" name="class-div" required data-tip="Enter your class and division here">
-                <div id="class-div-tooltip" class="info-box hidden"></div>
-            </div>
-            <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required data-tip="Enter your current address here">
-                <div id="address-tooltip" class="info-box hidden"></div>
-            </div>
-            <div class="form-group">
-                <label for="phone">Telephone No.:</label>
-                <input type="text" id="phone" name="phone" required data-tip="Enter your phone number(s) here, separate multiple numbers with commas">
-                <div id="phone-tooltip" class="info-box hidden"></div>
-            </div>
-            <div class="form-group">
-            <label for="address">Blood Group:</label>
-            <input type="text" id="address" name="address" required data-tip="Enter your blood group here">
-            <div id="address-tooltip" class="info-box hidden"></div>
-            <div class="form-group agreement">
-                <p>I <input type="text" id="declaration-name" name="declaration-name" required placeholder="Your Name" data-tip="Enter your name here"> hereby declare that I will abide by the rules of Socialist Students' Front</p>
-            </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <div class="copyright">
-            © 2024 CHITRON BHATTACHARJEE. All rights reserved.
-        </div>
+<div class="header">
+    ঐক্য ★ সংগ্রাম ★ প্রগতি
+</div>
+
+<div class="container">
+    <h1>সমাজতান্ত্রিক ছাত্র ফ্রন্ট</h1>
+    <h2>প্রাথমিক সদস্য পদের জন্য আবেদন</h2>
+
+    <div class="quote-box">
+        রাজনীতি ছাড়া একটি গাছের পাতাও নড়ে না।
+        <div class="quote-author">— Aristotle</div>
     </div>
+
+    <div class="quote-box">
+        রাজনীতি যদি দেশ প্রেম হয়, রাজনীতি যদি সাম্যের চেতনা হয়, রাজনীতি যদি মানুষের প্রতি মানুষের নৈর্ব্যক্তিক ভালোবাসা ও হৃদয়বৃত্তির আধার হয়, তাহলে রাজনীতি ছাড়া একজন ছাত্র সঠিকভাবে মানুষ হয়ে উঠবে কিভাবে?
+        <div class="quote-author">— কমরেড খালেকুজ্জামান</div>
+    </div>
+    <h3>ছাত্র রাজনীতি কেন প্রয়োজন?</h3>
+    <ul>
+    <li>শিক্ষার গুণগত মান নিশ্চিত করতে।</li>
+    <li>ছাত্রদের অধিকার রক্ষায় শক্তিশালী ভূমিকা রাখতে।</li>
+    <li>সমাজের বৈষম্যের বিরুদ্ধে লড়াই করতে।</li>
+    <li>গণতন্ত্র ও সামাজিক ন্যায়ের জন্য সংগঠিত হতে।</li>
+    </ul>
+    
+    <h3>আমাদের মূলনীতি:</h3>
+    <ul>
+    <li>ধর্ম নিরপেক্ষ, সেকুলার ও বৈষম্যহীন শিক্ষা ব্যবস্থা</li>
+    <li>শ্রমজীবী মানুষের শোষণ মুক্তি</li>
+    <li>একই ধারার গণতান্ত্রিক ও বিজ্ঞানভিত্তিক শিক্ষা</li>
+    <li>যেকোনো অন্যায়ের বিরুদ্ধে লড়াই</li>
+    </ul>
+    
+    <div class="content">
+    <h2>১. ছাত্রফ্রন্ট কি?</h2>
+    <p>ছাত্রফ্রন্ট একটি প্রগতিশীল বামপন্থী ছাত্র সংগঠন যা বাংলাদেশের রাজনৈতিক, সামাজিক, ও শিক্ষাগত ক্ষেত্রে পরিবর্তন আনতে কাজ করে। এটি একটি গণতান্ত্রিক এবং সমাজতান্ত্রিক আদর্শে বিশ্বাসী সংগঠন, যার মূল লক্ষ্য হল দেশব্যাপী শিক্ষা, ন্যায়বিচার, এবং শ্রমিক-কৃষক আন্দোলনকে সমর্থন করা। ছাত্রফ্রন্ট ছাত্রদের অধিকার রক্ষার জন্য, সমাজে পরিবর্তন আনার জন্য এবং দেশের উন্নতির জন্য কাজ করে।</p>
+    
+    <h2>২. ছাত্রফ্রন্টের আদর্শ ও উদ্দেশ্য:</h2>
+    <ul>
+    <li>ছাত্রদের শিক্ষা ও অধিকার রক্ষা করা।</li>
+    <li>সামাজিক ন্যায় প্রতিষ্ঠা করা।</li>
+    <li>শ্রমিক, কৃষক এবং সাধারণ জনগণের অধিকার রক্ষা করা।</li>
+    <li>দেশের রাজনৈতিক ও অর্থনৈতিক অগ্রগতির জন্য কাজ করা।</li>
+    </ul>
+    
+    <h2>৩. ছাত্রফ্রন্টে যোগ দেওয়ার সুবিধা:</h2>
+    <ul>
+    <li><strong>নেতৃত্বের সুযোগ:</strong> ছাত্রফ্রন্টে যোগ দিলে নেতৃত্বের দক্ষতা বৃদ্ধি পায় এবং ভবিষ্যতে সমাজে দায়িত্বশীল ভূমিকা পালনের সুযোগ আসে।</li>
+    <li><strong>সামাজিক উন্নতি:</strong> সংগঠনটির মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনার সুযোগ পাওয়া যায়।</li>
+    <li><strong>শিক্ষাগত সহায়তা:</strong> ছাত্রফ্রন্ট একটি শিক্ষাবান্ধব সংগঠন, যা ছাত্রদের শিক্ষা ও মানসিক উন্নতির জন্য কাজ করে।</li>
+    <li><strong>গণতান্ত্রিক পরিবেশ:</strong> ছাত্রফ্রন্ট একটি গণতান্ত্রিক সংগঠন হওয়ায়, সকল সদস্যদের মতামত গুরুত্ব পায়।</li>
+    </ul>
+    
+    <h2>৪. সাধারণ উদ্বেগের উত্তর:</h2>
+    <p><strong>কেন ছাত্রফ্রন্টে যোগ দেওয়া উচিত?</strong> ছাত্রফ্রন্ট দেশের বৃহত্তর পরিবর্তনে অংশগ্রহণ করার সুযোগ দেয়। এর মাধ্যমে আপনি শিক্ষাগত উন্নতি, নেতৃত্ব বিকাশ এবং দেশের জন্য কাজ করতে পারবেন।</p>
+    <p><strong>এটি কি বিপজ্জনক বা বিতর্কিত?</strong> ছাত্রফ্রন্ট একটি আদর্শবাদী সংগঠন, যা সহিংসতার বিরোধী এবং গণতান্ত্রিক মূলনীতির প্রতি আস্থা রাখে।</p>
+    <p><strong>আমরা যোগ দিলে কি আমাদের পড়াশোনার ক্ষতি হবে?</strong> ছাত্রফ্রন্ট শিক্ষার্থীদের পড়াশোনাকে অগ্রাধিকার দেয়। এটি একটি ছাত্র সংগঠন, যেখানে পড়াশোনার পাশাপাশি সমাজ সেবা ও সংগঠন পরিচালনায় অংশগ্রহণের সুযোগ দেওয়া হয়।</p>
+    <p><strong>আমরা যদি যুক্ত হই, তাহলে দলের প্রতি আমাদের দায়িত্ব কী হবে?</strong> আপনার দায়িত্ব হবে দল ও জনগণের প্রতি দায়বদ্ধ থেকে সংগঠনের লক্ষ্য ও আদর্শকে বাস্তবায়ন করা। আপনি দলের উদ্দেশ্য অনুসারে সমাজে ইতিবাচক পরিবর্তন আনার জন্য কাজ করবেন।</p>
+    
+    <h2>৫. উপসংহার:</h2>
+    <p>ছাত্রফ্রন্টে যোগ দিয়ে আপনি শুধুমাত্র একটি সংগঠনের অংশ হবেন না, বরং আপনি একটি বৃহত্তর সামাজিক ও রাজনৈতিক আন্দোলনের অংশ হয়ে দেশ ও সমাজের উন্নয়নে কাজ করতে পারবেন। আপনার যোগদান নতুন আশা ও সম্ভাবনার দিকে পরিচালিত করবে।</p>
+    </div>
+    
+
+    <h3>প্রাথমিক সদস্য পদের জন্য আবেদন ফর্ম</h3>
+
+    <form action="https://formspree.io/f/myzgapre" method="post">
+        <div class="form-group">
+            <label for="name">নাম:</label>
+            <input type="text" id="name" name="name" required>
+            <div class="help-box">আপনার পূর্ণ নাম লিখুন</div>
+        </div>
+        <div class="form-group">
+            <label for="class">শ্রেণি:</label>
+            <input type="text" id="class" name="class" required>
+            <div class="help-box">আপনার বর্তমান শ্রেণি লিখুন</div>
+        </div>
+        <div class="form-group">
+            <label for="institution">শিক্ষাপ্রতিষ্ঠান:</label>
+            <input type="text" id="institution" name="institution" required>
+            <div class="help-box">আপনার শিক্ষাপ্রতিষ্ঠানের নাম লিখুন</div>
+        </div>
+        <div class="form-group">
+            <label for="phone">ফোন নম্বর:</label>
+            <input type="text" id="phone" name="phone" required>
+            <div class="help-box">আপনার সক্রিয় মোবাইল নম্বর লিখুন</div>
+        </div>
+        
+        <div class="declaration-box">
+            <p>
+                আমি <input type="text" id="declaration-name" name="declaration-name" required placeholder="আপনার নাম লিখুন"> 
+                ঘোষণা করছি যে, আমি সমাজতন্ত্র, মার্কসবাদ ও লেনিনবাদে বিশ্বাসী। আমি শোষণহীন সমাজ গঠনের সংগ্রামে সক্রিয়ভাবে অংশগ্রহণ করবো এবং সমাজতান্ত্রিক ছাত্র ফ্রন্টের নীতি ও আদর্শ মেনে চলবো।
+            </p>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">আবেদন করুন</button>
+        </div>
+    </form>
+
+    <div class="footer">
+        © ২০২৫ সমাজতান্ত্রিক ছাত্র ফ্রন্ট, দুর্গাপুর উপজেলা শাখা কর্তৃক সর্বস্বত্ব সংরক্ষিত।
+    </div>
+</div>
 
 </body>
 </html>
