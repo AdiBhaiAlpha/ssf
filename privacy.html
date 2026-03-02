@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Socialist Students' Front</title>
+  <style>
+    /* ===== RESET & GLOBAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background-color: #0b0202; /* deep background for contrast */
+      color: #f0e9e9;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ===== ANIMATED DIGITAL BACKGROUND (CYBER GRID) ===== */
+    .digital-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #3a0c0c, #0a0101 80%);
+      overflow: hidden;
+    }
+
+    .grid-overlay {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image: 
+        linear-gradient(rgba(139, 0, 0, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(180, 40, 40, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      transform: rotate(0deg) scale(1.2);
+      animation: drift 24s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1.2); }
+      100% { transform: translate(-60px, -40px) rotate(0.5deg) scale(1.25); }
+    }
+
+    /* floating digital particles */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #b32424;
+      border-radius: 50%;
+      box-shadow: 0 0 12px 3px #8b0000;
+      animation: floatParticle 18s infinite ease-in-out;
+      opacity: 0.4;
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) translateX(0); opacity: 0.2; }
+      50% { transform: translateY(-120px) translateX(80px); opacity: 0.8; }
+      100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+    }
+
+    /* ===== PERSONALISED UI ===== */
+    /* header with glassmorphism + live shimmer */
+    header {
+      background: rgba(100, 0, 0, 0.75);
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      border-bottom: 2px solid #b3002f;
+      color: #fff;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 0 1px rgba(180, 0, 0, 0.5) inset;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 1rem;
+    }
+
+    .shimmer {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: skewX(-15deg);
+      animation: shimmer 8s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      20% { left: 120%; }
+      100% { left: 120%; }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #ff4d4d, 2px 2px 0 #330000;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-style: italic;
+      border-top: 1px dashed #b35e5e;
+      display: inline-block;
+      padding-top: 0.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== MAIN CARD CONTAINER ===== */
+    section {
+      padding: 2rem 2rem 3rem 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: rgba(20, 5, 5, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(180, 40, 40, 0.6);
+      border-radius: 48px 16px 48px 16px;
+      box-shadow: 0 25px 50px -8px black, 0 0 0 2px #8b0000 inset, 0 0 20px #a51b1b;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 5;
+      position: relative;
+    }
+
+    section:hover {
+      box-shadow: 0 30px 60px -5px black, 0 0 0 3px #c23737 inset, 0 0 40px #b30000;
+      transform: scale(1.01);
+    }
+
+    /* personalised headings with glitch effect */
+    h2 {
+      color: #ffc5c5;
+      font-size: 2rem;
+      margin: 2.2rem 0 1rem 0;
+      border-left: 8px solid #8b0000;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-shadow: 0 0 5px #a52a2a;
+      position: relative;
+      animation: glitchText 5s infinite alternate;
+    }
+
+    @keyframes glitchText {
+      0% { text-shadow: -2px 0 #ff0000, 2px 2px #8b0000; }
+      20% { text-shadow: 3px 1px #b30000, -2px -1px #4b0000; }
+      40% { text-shadow: -1px -2px #ff4d4d, 2px 3px #2f0000; }
+      60% { text-shadow: 2px -2px #870000, -3px 1px #c00; }
+      80% { text-shadow: -2px 2px #a00, 3px -2px #3b0000; }
+      100% { text-shadow: 1px 1px #b00, -1px -1px #800; }
+    }
+
+    /* icons animated glow */
+    .icon {
+      width: 36px;
+      height: 36px;
+      fill: #e05a5a;
+      filter: drop-shadow(0 0 8px #b30000);
+      transition: all 0.2s;
+    }
+
+    h2:hover .icon {
+      fill: #ff8080;
+      filter: drop-shadow(0 0 15px #ff5555);
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    /* paragraph style */
+    p {
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 1.2rem 1.8rem;
+      border-radius: 60px 16px 60px 16px;
+      border: 1px solid #a55252;
+      box-shadow: 0 8px 0 #3d0404;
+      backdrop-filter: blur(4px);
+      margin-bottom: 1.8rem;
+      transition: 0.2s;
+      color: #fadfdf;
+    }
+
+    p:hover {
+      background: rgba(70, 10, 10, 0.7);
+      box-shadow: 0 8px 0 #690f0f, 0 0 25px #b30000;
+      border-color: #e08080;
+    }
+
+    /* digital counter / live element */
+    .live-indicator {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #f0b3b3;
+      border-bottom: 1px dashed #8b4444;
+      padding-bottom: 5px;
+    }
+
+    .pulse-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #44ff44;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00ff00;
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.3); background-color: #aaffaa; }
+    }
+
+    .badge {
+      background: #8b0000;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      border: 1px solid #ffa4a4;
+      animation: glow 3s infinite;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 2px #ff8888; }
+      50% { box-shadow: 0 0 18px #ff3838; }
+      100% { box-shadow: 0 0 2px #ff8888; }
+    }
+
+    /* footer */
+    footer {
+      background: #1f0303d9;
+      backdrop-filter: blur(8px);
+      border-top: 2px solid #8b0000;
+      color: #ffc9c9;
+      text-align: center;
+      padding: 1.8rem;
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 -10px 30px #1a0101;
+    }
+
+    footer p {
+      background: none;
+      box-shadow: none;
+      border: none;
+      padding: 0.5rem;
+      margin: 0;
+    }
+
+    footer:hover {
+      text-shadow: 0 0 6px #ff7b7b;
+    }
+
+    /* personalized greetings */
+    .user-greeting {
+      display: inline-block;
+      background: rgba(255, 0, 0, 0.2);
+      border-radius: 100px;
+      padding: 0.5rem 1.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #a52a2a;
+      font-size: 1.2rem;
+      font-weight: 400;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px #6b0f0f;
+    }
+
+    .user-greeting span {
+      color: #ff9191;
+      font-weight: 700;
+      animation: colorChange 4s infinite;
+    }
+
+    @keyframes colorChange {
+      0% { color: #ffb3b3; }
+      50% { color: #ff5e5e; text-shadow: 0 0 12px red; }
+      100% { color: #ffb3b3; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      section { padding: 1.5rem; margin: 1rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- animated digital background: grid + particles -->
+  <div class="digital-bg">
+    <div class="grid-overlay"></div>
+    <div class="particles">
+      <div class="particle" style="top: 15%; left: 10%; animation-delay: -2s;"></div>
+      <div class="particle" style="top: 70%; left: 85%; width: 3px; height: 3px; animation-duration: 24s;"></div>
+      <div class="particle" style="top: 40%; left: 30%; animation-delay: -9s;"></div>
+      <div class="particle" style="top: 85%; left: 20%; width: 4px; height: 4px; filter: blur(1px);"></div>
+      <div class="particle" style="top: 10%; left: 80%; animation-duration: 30s;"></div>
+      <div class="particle" style="top: 55%; left: 55%; width: 3px; height: 3px; animation-delay: -5s;"></div>
+      <div class="particle" style="top: 33%; left: 5%;"></div>
+      <div class="particle" style="top: 92%; left: 48%;"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="shimmer"></div>
+    <h1>⚡ PRIVACY POLICY ⚡</h1>
+    <p>Socialist Students' Front – Mymensingh Zila Unit</p>
+    <!-- live digital indicator / personalized badge -->
+    <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <span class="badge">🔴 DIGITAL SECURE  🔴</span>
+      <span class="badge">⚡ COMRADE FIRST ⚡</span>
+    </div>
+  </header>
+
+  <section>
+    <!-- personalised ui: dynamic greeting (changes based on time, but static example) + live element -->
+    <div class="live-indicator">
+      <div class="pulse-dot"></div>
+      <span style="font-weight: 300;">LIVE · PROTECTING 1,428 COMRADES</span>
+      <span style="flex:1;"></span>
+      <span class="badge">session: active</span>
+    </div>
+
+    <div class="user-greeting">
+      ✊🏽 Welcome back, <span id="dynamicUser">Comrade</span> · Mymensingh Zila
+    </div>
+
+    <h2>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/>
+        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+      </svg>
+      Information We Collect
+    </h2>
+    <p>We collect only the information necessary to support comrades in the Mymensingh Zila unit, such as names, contact details, and organizational roles. Transparency is our foundation — no data is ever mined or sold.</p>
+
+    <h2>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"/>
+        <path d="M12 7.5v6l4.5 2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      How We Use Information
+    </h2>
+    <p>Information is used strictly for organizational communication, event coordination, and strengthening solidarity among comrades. Every byte is dedicated to the movement.</p>
+
+    <h2>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 1l9 4v6c0 5.25-3.75 10.74-9 12-5.25-1.26-9-6.75-9-12V5l9-4z"/>
+        <path d="M12 7v6l4 2" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      Data Protection
+    </h2>
+    <p>We safeguard all collected data with strict confidentiality. Access is limited to authorized comrades only. Encrypted channels, regular audits, and revolutionary integrity keep information safe.</p>
+
+    <h2>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 00-10 10h2a8 8 0 1116 0h2a10 10 0 00-10-10z"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor"/>
+      </svg>
+      Your Rights
+    </h2>
+    <p>Comrades may request to review, update, or remove their personal information at any time. Solidarity means control — your data, your choice. Contact the unit secretary for any request.</p>
+
+    <!-- additional personalised callout -->
+    <div style="background: #3e0909b0; border-radius: 24px; padding: 1.8rem; margin-top: 2.5rem; border: 2px dashed #b30000; text-align: center; animation: glow 4s infinite;">
+      <span style="font-size: 2rem; display: block;">🛡️</span>
+      <p style="background: none; border: none; box-shadow: none; font-size: 1.2rem; margin: 0;">This policy is alive — updated dynamically to serve the front. <br> <span style="color: #ff8a8a;">ver. 2026.03 · socialist students' front</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Socialist Students' Front – Mymensingh Zila Unit · all comrades' rights reserved</p>
+    <p style="font-size: 0.9rem; border-top: 1px solid #8b4444; display: inline-block; padding: 0.5rem 2rem;">✊🏽 unity · struggle · progress ✊🏽</p>
+  </footer>
+
+  <!-- small script to personalise user greeting (simple dynamic) -->
+  <script>
+    (function() {
+      // personalized ui: set a random comrade-like name (or you can use a prompt / local-storage, but here just for design)
+      const names = ['Shahid', 'Mukti', 'Shomaj', 'Prokash', 'Anirban', 'Shikha', 'Ronojit', 'Shomir'];
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const userSpan = document.getElementById('dynamicUser');
+      if (userSpan) {
+        userSpan.textContent = randomName;
+      }
+
+      // add another dynamic: last updated time
+      const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const timeStr = new Date().toLocaleTimeString('en-BD', { timeZone: 'Asia/Dhaka', hour12: true });
+      // optional: create a small element
+      const liveBadge = document.querySelector('.live-indicator span:first-of-type');
+      // not necessary, just for fun.
+    })();
+  </script>
+  <!-- extra animation: particle movement simulated -->
+</body>
+</html>
